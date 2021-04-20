@@ -1,0 +1,177 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/ben/src/inquirer-file-tree-selection/example
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 80
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 15
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 3000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: inquirer-tree-prompt
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc2364"
+    green: "#93e31b"
+    yellow: "#ffa707"
+    blue: "#25bff2"
+    magenta: "#ae29fe"
+    cyan: "#208387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff5f8c"
+    brightGreen: "#a8ed51"
+    brightYellow: "#ebdf66"
+    brightBlue: "#55bff2"
+    brightMagenta: "#9e89fe"
+    brightCyan: "#61e6ea"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 8
+    content: "\e[H\e[2J\e[3J$ node simple.js"
+  - delay: 156
+    content: "\r\n"
+  - delay: 420
+    content: "\e[?25l"
+  - delay: 5
+    content: "\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\e[2m(Use arrow keys, space to select, enter to confirm.)\e[22m\r\n\e[31m  → ◯ burgers\e[39m\r\n\e[31m\e[39m  → ◯ fish\r\n  → ◯ snacks\r\n\e[0D"
+  - delay: 1300
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n\e[31m  ↓ ◯ burgers\e[39m\r\n\e[31m\e[39m      ◯ PLAIN\r\n      ◯ THE LOT\r\n  → ◯ fish\r\n  → ◯ snacks\r\n\e[0D"
+  - delay: 869
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  ↓ ◯ burgers\r\n\e[36m    ❯ ◯ PLAIN\e[39m\r\n\e[36m\e[39m      ◯ THE LOT\r\n  → ◯ fish\r\n  → ◯ snacks\r\n\e[0D"
+  - delay: 316
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  ↓ ◯ burgers\r\n\e[36m    ❯ ◉ PLAIN\e[39m\r\n\e[36m\e[39m      ◯ THE LOT\r\n  → ◯ fish\r\n  → ◯ snacks\r\n\e[0D\e[1C"
+  - delay: 312
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n\e[31m  ↓ ◯ burgers\e[39m\r\n\e[31m\e[39m      ◉ PLAIN\r\n      ◯ THE LOT\r\n  → ◯ fish\r\n  → ◯ snacks\r\n\e[0D"
+  - delay: 279
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n\e[31m  → ◯ burgers\e[39m\r\n\e[31m\e[39m  → ◯ fish\r\n  → ◯ snacks\r\n\e[0D"
+  - delay: 270
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n\e[31m  → ◯ fish\e[39m\r\n\e[31m\e[39m  → ◯ snacks\r\n\e[0D"
+  - delay: 223
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n\e[31m  ↓ ◯ fish\e[39m\r\n\e[31m\e[39m      ◯ WHITING\r\n      ◯ FLATHEAD\r\n  → ◯ snacks\r\n\e[0D\e[1C"
+  - delay: 495
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  ↓ ◯ fish\r\n\e[36m    ❯ ◯ WHITING\e[39m\r\n\e[36m\e[39m      ◯ FLATHEAD\r\n  → ◯ snacks\r\n\e[0D\e[1C"
+  - delay: 257
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  ↓ ◯ fish\r\n      ◯ WHITING\r\n\e[36m    ❯ ◯ FLATHEAD\e[39m\r\n\e[36m\e[39m  → ◯ snacks\r\n\e[0D\e[1C"
+  - delay: 248
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  ↓ ◯ fish\r\n      ◯ WHITING\r\n\e[36m    ❯ ◉ FLATHEAD\e[39m\r\n\e[36m\e[39m  → ◯ snacks\r\n\e[0D\e[2C"
+  - delay: 292
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n\e[31m  ↓ ◯ fish\e[39m\r\n\e[31m\e[39m      ◯ WHITING\r\n      ◉ FLATHEAD\r\n  → ◯ snacks\r\n\e[0D\e[1C"
+  - delay: 226
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n\e[31m  → ◯ fish\e[39m\r\n\e[31m\e[39m  → ◯ snacks\r\n\e[0D"
+  - delay: 404
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  → ◯ fish\r\n\e[31m  → ◯ snacks\e[39m\r\n\e[31m\e[39m\r\n\e[0D"
+  - delay: 360
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  → ◯ fish\r\n\e[31m  ↓ ◯ snacks\e[39m\r\n\e[31m\e[39m      ◯ CHIPS\r\n      ◯ DIM SIMS\r\n      ◯ CALAMARI\r\n      ◯ PICKLED ONIONS\r\n      ◯ JAM DONUTS\r\n    → ◯ fritters\r\n\e[0D\e[1C"
+  - delay: 826
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  → ◯ fish\r\n  ↓ ◯ snacks\r\n\e[36m    ❯ ◯ CHIPS\e[39m\r\n\e[36m\e[39m      ◯ DIM SIMS\r\n      ◯ CALAMARI\r\n      ◯ PICKLED ONIONS\r\n      ◯ JAM DONUTS\r\n    → ◯ fritters\r\n\e[0D\e[1C"
+  - delay: 264
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  → ◯ fish\r\n  ↓ ◯ snacks\r\n\e[36m    ❯ ◉ CHIPS\e[39m\r\n\e[36m\e[39m      ◯ DIM SIMS\r\n      ◯ CALAMARI\r\n      ◯ PICKLED ONIONS\r\n      ◯ JAM DONUTS\r\n    → ◯ fritters\r\n\e[0D\e[2C"
+  - delay: 832
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  → ◯ fish\r\n  ↓ ◯ snacks\r\n      ◉ CHIPS\r\n\e[36m    ❯ ◯ DIM SIMS\e[39m\r\n\e[36m\e[39m      ◯ CALAMARI\r\n      ◯ PICKLED ONIONS\r\n      ◯ JAM DONUTS\r\n    → ◯ fritters\r\n\e[0D\e[2C"
+  - delay: 280
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  → ◯ fish\r\n  ↓ ◯ snacks\r\n      ◉ CHIPS\r\n      ◯ DIM SIMS\r\n\e[36m    ❯ ◯ CALAMARI\e[39m\r\n\e[36m\e[39m      ◯ PICKLED ONIONS\r\n      ◯ JAM DONUTS\r\n    → ◯ fritters\r\n\e[0D\e[2C"
+  - delay: 383
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  → ◯ fish\r\n  ↓ ◯ snacks\r\n      ◉ CHIPS\r\n      ◯ DIM SIMS\r\n\e[36m    ❯ ◉ CALAMARI\e[39m\r\n\e[36m\e[39m      ◯ PICKLED ONIONS\r\n      ◯ JAM DONUTS\r\n    → ◯ fritters\r\n\e[0D\e[3C"
+  - delay: 270
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  → ◯ fish\r\n  ↓ ◯ snacks\r\n      ◉ CHIPS\r\n      ◯ DIM SIMS\r\n      ◉ CALAMARI\r\n\e[36m    ❯ ◯ PICKLED ONIONS\e[39m\r\n\e[36m\e[39m      ◯ JAM DONUTS\r\n    → ◯ fritters\r\n\e[0D\e[3C"
+  - delay: 235
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  → ◯ fish\r\n  ↓ ◯ snacks\r\n      ◉ CHIPS\r\n      ◯ DIM SIMS\r\n      ◉ CALAMARI\r\n      ◯ PICKLED ONIONS\r\n\e[36m    ❯ ◯ JAM DONUTS\e[39m\r\n\e[36m\e[39m    → ◯ fritters\r\n\e[0D\e[3C"
+  - delay: 257
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ burgers\r\n  → ◯ fish\r\n  ↓ ◯ snacks\r\n      ◉ CHIPS\r\n      ◯ DIM SIMS\r\n      ◉ CALAMARI\r\n      ◯ PICKLED ONIONS\r\n      ◯ JAM DONUTS\r\n\e[31m    → ◯ fritters\e[39m\r\n\e[31m\e[39m\r\n\e[0D\e[3C"
+  - delay: 203
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ fish\r\n  ↓ ◯ snacks\r\n      ◉ CHIPS\r\n      ◯ DIM SIMS\r\n      ◉ CALAMARI\r\n      ◯ PICKLED ONIONS\r\n      ◯ JAM DONUTS\r\n\e[31m    ↓ ◯ fritters\e[39m\r\n\e[31m\e[39m        ◯ BANANA\r\n        ◯ PINEAPPLE\r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 269
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  → ◯ fish\r\n  ↓ ◯ snacks\r\n      ◉ CHIPS\r\n      ◯ DIM SIMS\r\n      ◉ CALAMARI\r\n      ◯ PICKLED ONIONS\r\n      ◯ JAM DONUTS\r\n    ↓ ◯ fritters\r\n\e[36m      ❯ ◯ BANANA\e[39m\r\n\e[36m\e[39m        ◯ PINEAPPLE\r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 272
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  ↓ ◯ snacks\r\n      ◉ CHIPS\r\n      ◯ DIM SIMS\r\n      ◉ CALAMARI\r\n      ◯ PICKLED ONIONS\r\n      ◯ JAM DONUTS\r\n    ↓ ◯ fritters\r\n        ◯ BANANA\r\n\e[36m      ❯ ◯ PINEAPPLE\e[39m\r\n\e[36m\e[39m\r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 628
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\r\n  ↓ ◯ snacks\r\n      ◉ CHIPS\r\n      ◯ DIM SIMS\r\n      ◉ CALAMARI\r\n      ◯ PICKLED ONIONS\r\n      ◯ JAM DONUTS\r\n    ↓ ◯ fritters\r\n        ◯ BANANA\r\n\e[36m      ❯ ◉ PINEAPPLE\e[39m\r\n\e[36m\e[39m\r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 2633
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mOrder your meal:\e[22m\e[0m \e[0m\e[36mPLAIN BURGER, FLATHEAD, CHIPS, CALAMARI, PINEAPPLE FRITTER\e[39m\e[77D\e[77C\r\n\e[?25h{\"meal\":[\"plain burger\",\"flathead\",\"chips\",\"calamari\",\"pineapple fritter\"]}\r\n\e[?25h$ "
+  - delay: 5099
+    content: "\r\n"
