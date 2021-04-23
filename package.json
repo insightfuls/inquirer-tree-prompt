@@ -1,6 +1,6 @@
 {
   "name": "inquirer-tree-prompt",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "repository": "https://github.com/insightfuls/inquirer-tree-prompt",
   "description": "Inquirer tree prompt",
   "main": "index.js",

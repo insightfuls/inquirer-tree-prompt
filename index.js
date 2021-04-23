@@ -140,6 +140,15 @@ class TreePrompt extends BasePrompt {
 						[ "name", "value", "short" ].forEach((property) => {
 							node[property] = nodeOrChildren[property];
 						});
+						node.isValid = undefined;
+
+						await this.addValidity(node);
+
+						/*
+						 * Don't filter based on validity; children can be handled by the
+						 * callback itself if desired, and filtering out the node itself
+						 * would be a poor experience in this scenario.
+						 */
 					}
 
 					node.children = _.cloneDeep(children);
@@ -174,13 +183,7 @@ class TreePrompt extends BasePrompt {
 
 			child.parent = node;
 
-			if (typeof child.isValid === 'undefined') {
-				if (this.opt.validate) {
-					child.isValid = await this.opt.validate(this.valueFor(child), this.answers);
-				} else {
-					child.isValid = true;
-				}
-			}
+			await this.addValidity(node);
 
 			if (this.opt.hideChildrenOfValid && child.isValid === true) {
 				child.children = null;
@@ -192,6 +195,16 @@ class TreePrompt extends BasePrompt {
 
 			if (child.open) {
 				await this.prepareChildren(child);
+			}
+		}
+	}
+
+	async addValidity(node) {
+		if (typeof node.isValid === 'undefined') {
+			if (this.opt.validate) {
+				node.isValid = await this.opt.validate(this.valueFor(node), this.answers);
+			} else {
+				node.isValid = true;
 			}
 		}
 	}
