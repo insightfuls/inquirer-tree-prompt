@@ -36,7 +36,7 @@ The extra options that this plugin provides are:
   - `value`: (String) to put in answers hash; must provide this or `name`
   - `short`: (String) to display after selection
   - `open`: (Boolean) whether the item is expanded or collapsed
-  - `children`: (Array or Function) list
+  - `children`: (Array or Function) list of child tree items or (optionally asynchronous) function to obtain them; function may return replacement item instead of just list of children
 
 - `onlyShowValid`: (Boolean) if true, will only show valid items (if `validate` is provided). Default: false.
 

@@ -130,9 +130,19 @@ class TreePrompt extends BasePrompt {
 	async runChildrenFunctionIfRequired(node) {
 		if (typeof node.children === 'function') {
 			try {
-				node.children = await node.children();
-				if (node.children) {
-					node.children = _.cloneDeep(node.children);
+				const nodeOrChildren = await node.children();
+				if (nodeOrChildren) {
+					let children;
+					if (Array.isArray(nodeOrChildren)) {
+						children = nodeOrChildren;
+					} else {
+						children = nodeOrChildren.children;
+						[ "name", "value", "short" ].forEach((property) => {
+							node[property] = nodeOrChildren[property];
+						});
+					}
+
+					node.children = _.cloneDeep(children);
 				}
 			} catch (e) {
 				/*
