@@ -183,7 +183,7 @@ class TreePrompt extends BasePrompt {
 
 			child.parent = node;
 
-			await this.addValidity(node);
+			await this.addValidity(child);
 
 			if (this.opt.hideChildrenOfValid && child.isValid === true) {
 				child.children = null;
