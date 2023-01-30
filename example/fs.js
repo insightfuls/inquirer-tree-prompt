@@ -1,7 +1,7 @@
-const inquirer = require('inquirer');
-const TreePrompt = require('../index');
-const path = require('path');
-const fs = require('fs').promises;
+import inquirer from 'inquirer';
+import TreePrompt from '../index.js';
+import path from 'node:path';
+import fs from 'node:fs/promises';
 
 inquirer.registerPrompt('tree', TreePrompt);
 

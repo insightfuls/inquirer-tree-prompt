@@ -2,6 +2,7 @@
   "name": "inquirer-tree-prompt",
   "version": "1.1.2",
   "repository": "https://github.com/insightfuls/inquirer-tree-prompt",
+  "type": "module",
   "description": "Inquirer tree prompt",
   "main": "index.js",
   "files": [
@@ -17,13 +18,16 @@
   "author": "Ben Schmidt",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "cli-cursor": "^3.1.0",
-    "figures": "^3.2.0",
+    "chalk": "^5.2.0",
+    "cli-cursor": "^4.0.0",
+    "figures": "^5.0.0",
     "lodash": "^4.17.21",
-    "rxjs": "^6.5.2"
+    "rxjs": "^7.8.0"
+  },
+  "peerDependencies": {
+    "inquirer": "^9.0.0"
   },
   "devDependencies": {
-    "inquirer": "^8.0.0"
+    "inquirer": "^9.1.4"
   }
 }
