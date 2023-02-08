@@ -330,7 +330,7 @@ class TreePrompt extends BasePrompt {
 		cliCursor.show();
 
 		this.done(this.opt.multiple ?
-				this.selectedList.map((item) => this.valueFor(item)) : state.value);
+				this.selectedList.map((item) => this.valueFor(item)) : (this.opt.getActiveObject ? this.active : state));
 	}
 
 	onUpKey() {
