@@ -63,9 +63,16 @@ class TreePrompt extends BasePrompt {
 	_installKeyHandlers() {
 		const events = observe(this.rl);
 
+		const getvalue = () => {
+			const value = this.opt.multiple ? this.selectedList[0] : this.active
+			if (value) {
+				this.valueFor(value)
+			}
+			return value
+		}
+
 		const validation = this.handleSubmitEvents(
-				events.line.pipe(map(() => this.valueFor(
-				this.opt.multiple ? this.selectedList[0] : this.active))));
+				events.line.pipe(map(getvalue)));
 		validation.success.forEach(this.onSubmit.bind(this));
 		validation.error.forEach(this.onError.bind(this));
 
