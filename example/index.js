@@ -1,5 +1,5 @@
-const inquirer = require('inquirer');
-const TreePrompt = require('../index');
+import inquirer from 'inquirer'
+import TreePrompt from '../index.js'
 
 inquirer.registerPrompt('tree', TreePrompt);
 
