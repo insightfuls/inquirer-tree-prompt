@@ -1,16 +1,26 @@
 'use strict';
+import chalk from 'chalk';
+import figures from 'figures';
+import * as cliCursor from 'cli-cursor'
+import { fromEvent } from 'rxjs';
+import { filter, share, flatMap, map, take, takeUntil } from 'rxjs/operators/index.js';
+import BasePrompt from 'inquirer/lib/prompts/base.js'
+import observe from 'inquirer/lib/utils/events.js'
+import Paginator from 'inquirer/lib/utils/paginator.js'
 
+import cloneDeep from 'lodash/cloneDeep.js';
 const _ = {
-	cloneDeep: require('lodash/cloneDeep')
+	cloneDeep: cloneDeep
 };
-const chalk = require('chalk');
-const figures = require('figures');
-const cliCursor = require('cli-cursor');
-const { fromEvent } = require('rxjs');
-const { filter, share, flatMap, map, take, takeUntil } = require('rxjs/operators');
-const BasePrompt = require('inquirer/lib/prompts/base');
-const observe = require('inquirer/lib/utils/events');
-const Paginator = require('inquirer/lib/utils/paginator');
+
+// const chalk = require('chalk');
+// const figures = require('figures');
+// const cliCursor = require('cli-cursor');
+// const { fromEvent } = require('rxjs');
+// // const { filter, share, flatMap, map, take, takeUntil } = require('rxjs/operators');
+// const BasePrompt = require('inquirer/lib/prompts/base');
+// const observe = require('inquirer/lib/utils/events');
+// const Paginator = require('inquirer/lib/utils/paginator');
 
 class TreePrompt extends BasePrompt {
 
@@ -426,4 +436,4 @@ class TreePrompt extends BasePrompt {
 
 }
 
-module.exports = TreePrompt;
+export default TreePrompt;
